@@ -1,8 +1,7 @@
 import React from 'react';
 // const usersController = require('../server/controllers/usersController.js');
-//import NewUser from '../client/components/NewUser';
 
-class App extends React.Component {
+class NewUser extends React.Component {
   handleLogin() {}
   handleNewUser() {}
 
@@ -18,4 +17,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default NewUser;
