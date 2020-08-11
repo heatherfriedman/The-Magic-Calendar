@@ -14,6 +14,21 @@ app.use('/', (req, res) => {
 });
 //}
 
+app.get('/signup', (req, res) => {
+  res.render('client/components/NewUser.jsx', { error: null });
+});
+
+//404 handler
+app.use('*', (req, res) => {
+  res.status(404).send('Sorry, that page is not here!');
+});
+
+//global error handler
+app.use((err, req, res, next) => {
+  console.log(err);
+  res.status(500).send('Oops! Internal Server Error');
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
