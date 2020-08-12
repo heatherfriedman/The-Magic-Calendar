@@ -15,9 +15,12 @@ app.get('/', (req, res) => {
 });
 //}
 
-app.post('/api/signup', usersController.newUser, (req, res, next) => {
-  console.log('hi alex');
-  return next();
+app.post('/api/signup', usersController.newUser, (req, res) => {
+  res.send(200);
+});
+
+app.post('/api/login', usersController.verifyUser, (req, res) => {
+  res.send(200);
 });
 
 //404 handler

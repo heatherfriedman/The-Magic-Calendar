@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class NewUser extends React.Component {
   constructor(props) {
@@ -10,27 +11,35 @@ class NewUser extends React.Component {
   handleChange(event) {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
   }
-  handleSubmit(event) {
-    //communicate with server
+  async handleSubmit(event) {
     event.preventDefault();
-    return fetch('http://localhost:8080/api/signup', {
-      method: 'POST',
-      body: JSON.stringify({
-        username: this.state.username,
-        password: this.state.password,
-      }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
+    //communicate with server
+    try {
+      const response = await fetch('http://localhost:8080/api/signup', {
+        method: 'POST',
+        body: JSON.stringify({
+          username: this.state.username,
+          password: this.state.password,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+      if (response.status === 200) {
+        //redirect to Main
+        this.props.history.replace('/main');
+      }
+    } catch (error) {
+      console.log('Error in handleSubmit of NewUser:', error);
+    }
   }
 
   render() {
     return (
       <div>
         <h1>Create New User</h1>
+        <div>Welcome! Please choose a username and password to begin!</div>
         <form onSubmit={this.handleSubmit}>
-          <div>Welcome! Please choose a username and password to begin!</div>
           <div>
             Username:
             <input
@@ -41,7 +50,7 @@ class NewUser extends React.Component {
             ></input>
           </div>
           <div>
-            Password:{' '}
+            Password:
             <input
               name="password"
               value={this.state.password}
@@ -56,4 +65,4 @@ class NewUser extends React.Component {
   }
 }
 
-export default NewUser;
+export default withRouter(NewUser);

@@ -1,11 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import App from './App.jsx';
+import Auth from './components/Auth.jsx';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Main from './components/App.jsx';
 
 render(
   <Router>
-    <App />
+    <Main />
   </Router>,
   document.getElementById('root'),
 );

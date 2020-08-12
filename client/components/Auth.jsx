@@ -7,13 +7,13 @@ import {
   Redirect,
   useHistory,
 } from 'react-router-dom';
-import NewUser from './components/NewUser.jsx';
-import Login from './components/Login.jsx';
-import Main from './components/Main.jsx';
+import NewUser from './NewUser.jsx';
+import Login from './Login.jsx';
+import Main from './App.jsx';
 
 // const usersController = require('../server/controllers/usersController.js');
 
-class App extends React.Component {
+class Auth extends React.Component {
   //   constructor(props) {
   //     super(props);
   //     this.handleNewUser = this.handleNewUser.bind(this);
@@ -33,25 +33,15 @@ class App extends React.Component {
     // const newUser = this.state.newUser;
     return (
       <div>
-        <h1>The Magic Calendar</h1>
         <Link to="/login">
           <button>Login</button>
         </Link>
-
         <Link to="/signup">
           <button>Create New User</button>
         </Link>
-
-        <div>
-          <Switch>
-            <Route path="/signup" component={NewUser} />
-            <Route path="/login" component={Login} />
-            <Route path="/main" component={Main} />
-          </Switch>
-        </div>
       </div>
     );
   }
 }
 
-export default App;
+export default Auth;
