@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const usersController = require('./controllers/usersController');
 
 const PORT = 3000;
 
@@ -9,13 +10,14 @@ app.use(express.json());
 // if (process.env.NODE_ENV === 'production') {
 app.use('/build', express.static(path.join(__dirname, '../build')));
 
-app.use('/', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 //}
 
-app.get('/signup', (req, res) => {
-  res.render('client/components/NewUser.jsx', { error: null });
+app.post('/api/signup', usersController.newUser, (req, res, next) => {
+  console.log('hi alex');
+  return next();
 });
 
 //404 handler

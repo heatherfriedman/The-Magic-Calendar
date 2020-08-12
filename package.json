@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/heatherfriedman/Solo-Project-Take-2#readme",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.11.1",
@@ -33,7 +35,6 @@
     "css-loader": "^4.2.1",
     "html-webpack-plugin": "^4.3.0",
     "nodemon": "^2.0.4",
-    "react-router-dom": "^5.2.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",

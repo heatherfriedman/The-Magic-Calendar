@@ -2,11 +2,15 @@ const db = require('../models/usersModel');
 
 const usersController = {};
 
-usersController.newUser = function (req, res, next) {
-  const query = `INSERT INTO users (username, password) VALUES ('test', '1');`;
-  db.query(query).then((data) => {
-    console.log(data);
-  });
+usersController.newUser = async (req, res, next) => {
+  try {
+    const { username, password } = req.body;
+    const query = `INSERT INTO users (username, password) VALUES ('${username}', '${password}');`;
+    const data = await db.query(query);
+    return next();
+  } catch {
+    return next('ERROR');
+  }
 };
 
 module.exports = usersController;

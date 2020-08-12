@@ -7,6 +7,7 @@ module.exports = {
     filename: 'build.js',
   },
   mode: process.env.NODE_ENV,
+  devtool: 'source-map',
   devServer: {
     host: 'localhost',
     port: 8080,
