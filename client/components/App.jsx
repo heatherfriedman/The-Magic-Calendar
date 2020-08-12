@@ -15,10 +15,16 @@ import Main from './Main.jsx';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.handleLoginChange = this.handleLoginChange.bind(this);
     this.state = {
       isLoggedIn: false,
     };
   }
+
+  handleLoginChange(isLoggedIn) {
+    this.setState({ ...this.state, isLoggedIn });
+  }
+
   render() {
     return (
       <div>
@@ -32,12 +38,19 @@ class App extends React.Component {
           </Route>
           <Route path="/auth" component={Auth} />
           <Route path="/signup" component={NewUser} />
-          <Route path="/login" render={(props) => <Login {...props} />} />
+          <Route
+            path="/login"
+            render={(props) => (
+              <Login {...props} onLoginChange={this.handleLoginChange} />
+            )}
+          />
           <Route path="/main" component={Main} />
         </Switch>
       </div>
     );
   }
 }
+
+//render={(props) => <Login {...props} />
 
 export default App;

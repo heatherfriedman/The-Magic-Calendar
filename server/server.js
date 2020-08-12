@@ -19,13 +19,11 @@ app.post('/api/signup', usersController.newUser, (req, res) => {
   res.send(200);
 });
 
-app.post('/api/login', usersController.verifyUser, (req, res) => {
-  res.send(200);
-});
+app.post('/api/login', usersController.verifyUser);
 
-//404 handler
 app.use('*', (req, res) => {
-  res.status(404).send('Sorry, that page is not here!');
+  //res.status(404).send('Sorry, that page is not here!');
+  res.sendFile(path.join(__dirname, '../client/index.html'));
 });
 
 //global error handler

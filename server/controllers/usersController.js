@@ -19,7 +19,9 @@ usersController.verifyUser = async (req, res, next) => {
     const { username, password } = req.body;
     const query = `SELECT username, password FROM users WHERE username='${username}' AND password = '${password}'`;
     const data = await db.query(query);
-
+    if (data.rows.length === 0) {
+      res.send(401);
+    }
     return next();
   } catch (error) {
     return next('Error in usersController.verifyUser:', error);

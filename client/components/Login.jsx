@@ -7,8 +7,10 @@ class Login extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
     this.state = { username: '', password: '' };
   }
+
   handleChange(event) {
     this.setState({ ...this.state, [event.target.name]: event.target.value });
   }
@@ -29,12 +31,14 @@ class Login extends React.Component {
         alert('Please try again or create new user.');
       }
       if (response.status === 200) {
+        this.props.onLoginChange(true);
         this.props.history.replace('/main');
       }
     } catch (error) {
       console.log('Error in handleSubmit of Login:', error);
     }
   }
+
   render() {
     return (
       <div>
