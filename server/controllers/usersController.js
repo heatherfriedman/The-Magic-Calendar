@@ -1,5 +1,4 @@
 const db = require('../models/usersModel');
-const { useHistory } = require('react-router');
 
 const usersController = {};
 

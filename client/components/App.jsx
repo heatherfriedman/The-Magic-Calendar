@@ -11,6 +11,7 @@ import NewUser from './NewUser.jsx';
 import Login from './Login.jsx';
 import Auth from './Auth.jsx';
 import Main from './Main.jsx';
+import NewEntry from './NewEntry.jsx';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class App extends React.Component {
             )}
           />
           <Route path="/main" component={Main} />
+          <Route path="/new" component={NewEntry} />
         </Switch>
       </div>
     );

@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const usersController = require('./controllers/usersController');
+const calendarController = require('./controllers/calendarController');
 
 const PORT = 3000;
 
@@ -21,6 +22,9 @@ app.post('/api/signup', usersController.newUser, (req, res) => {
 
 app.post('/api/login', usersController.verifyUser);
 
+app.use('/api/new', calendarController.newEntry, calendarController.getEntries);
+
+//do I need this?
 app.use('*', (req, res) => {
   //res.status(404).send('Sorry, that page is not here!');
   res.sendFile(path.join(__dirname, '../client/index.html'));
