@@ -21,11 +21,13 @@ calendarController.getEntries = async (req, res, next) => {
 
     const type = [];
     const entry = [];
+    const id = [];
     data.rows.forEach((object) => {
       type.push(object.type);
       entry.push(object.content);
+      id.push(object.entry_id);
     });
-    res.locals.information = { type, entry };
+    res.locals.information = { type, entry, id };
     // console.log('res locals', res.locals.information);
 
     return next();
@@ -36,10 +38,10 @@ calendarController.getEntries = async (req, res, next) => {
 
 calendarController.deleteEntry = async (req, res, next) => {
   try {
-    const query = 'SELECT * FROM entries';
+    const query = `DELETE FROM entries WHERE entry_id='${req.body.deletedId}' `;
     const data = await db.query(query);
     console.log('from delete entry', data);
-    console.log('req body from calendar contrller', req.body);
+    // console.log('req body from calendar contrller', req.body);
     return next();
   } catch (error) {
     return next('Error in calendarController.deleteEntry:', error);

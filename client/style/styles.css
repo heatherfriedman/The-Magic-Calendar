@@ -44,6 +44,8 @@ body {
 .smaller-button {
   padding: 1px;
   background: #f64c3d;
+  width: 150px;
+  height: 30px;
 }
 
 .header {
@@ -61,6 +63,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.smallest-text {
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 300;
+  color: #0762ca;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.small-input {
+  width: 50px;
 }
 
 .spacing-middle {

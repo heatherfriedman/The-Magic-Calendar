@@ -7,20 +7,41 @@ import { faDotCircle, faTasks, faPen } from '@fortawesome/free-solid-svg-icons';
 class Entries extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.delete = this.delete.bind(this);
   }
 
-  async handleClick(event) {
+  // async handleClick(event) {
+  //   try {
+  //     const response = await fetch('http://localhost:8080/api/delete', {
+  //       method: 'DELETE',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //     });
+  //     console.log('delete request response', response);
+  //   } catch (error) {
+  //     console.log('Error in handleClick of Entries:', error);
+  //   }
+  // }
+
+  async delete(event) {
+    event.preventDefault();
     try {
       const response = await fetch('http://localhost:8080/api/delete', {
-        method: 'DELETE',
+        method: 'POST',
+        body: JSON.stringify({
+          deletedId: this.props.id,
+        }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      console.log('delete request response', response);
+      if (response.status === 200) {
+        //redirect to Main
+        window.location.reload(false);
+      }
     } catch (error) {
-      console.log('Error in handleClick of Entries:', error);
+      console.log('Error in handleSubmit of Entries:', error);
     }
   }
 
@@ -40,12 +61,7 @@ class Entries extends React.Component {
         <div className="spacing-left">
           <FontAwesomeIcon icon={icon} /> {this.props.entry}
         </div>
-        <button
-          className="buttons smaller-button spacing-right"
-          onClick={() => {
-            this.handleClick;
-          }}
-        >
+        <button onClick={this.delete} className="buttons smaller-button">
           Delete Entry
         </button>
       </div>

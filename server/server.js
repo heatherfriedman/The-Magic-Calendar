@@ -35,7 +35,7 @@ app.get('/api/new', calendarController.getEntries, (req, res) => {
   res.status(200).json(res.locals.information);
 });
 
-app.delete('/api/delete', calendarController.deleteEntry);
+app.post('/api/delete', calendarController.deleteEntry);
 
 //do I need this?
 app.use((req, res) => {
