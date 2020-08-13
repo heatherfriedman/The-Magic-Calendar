@@ -36,8 +36,8 @@ class NewUser extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Create New User</h1>
+      <div className="auth-header">
+        <h3>Create New User</h3>
         <div>Welcome! Please choose a username and password to begin!</div>
         <form onSubmit={this.handleSubmit}>
           <div>
@@ -58,7 +58,7 @@ class NewUser extends React.Component {
               onChange={this.handleChange}
             ></input>
           </div>
-          <input type="submit" value="Submit" />
+          <input className="buttons" type="submit" value="Submit" />
         </form>
       </div>
     );

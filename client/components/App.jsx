@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div>
         <div>
-          <h1>The Magic Calendar</h1>
+          <h1 className="header">The Magic Calendar</h1>
         </div>
 
         <Switch>

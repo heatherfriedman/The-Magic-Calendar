@@ -32,12 +32,12 @@ class Auth extends React.Component {
   render() {
     // const newUser = this.state.newUser;
     return (
-      <div>
+      <div className="spacing-middle">
         <Link to="/login">
-          <button>Login</button>
+          <button className="buttons">Login</button>
         </Link>
         <Link to="/signup">
-          <button>Create New User</button>
+          <button className="buttons">Create New User</button>
         </Link>
       </div>
     );

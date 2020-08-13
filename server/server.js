@@ -22,10 +22,23 @@ app.post('/api/signup', usersController.newUser, (req, res) => {
 
 app.post('/api/login', usersController.verifyUser);
 
-app.use('/api/new', calendarController.newEntry, calendarController.getEntries);
+app.post(
+  '/api/new',
+  calendarController.newEntry,
+
+  // (req, res) => {
+  //   res.json(res.locals.information);
+  // },
+);
+
+app.get('/api/new', calendarController.getEntries, (req, res) => {
+  res.status(200).json(res.locals.information);
+});
+
+app.delete('/api/delete', calendarController.deleteEntry);
 
 //do I need this?
-app.use('*', (req, res) => {
+app.use((req, res) => {
   //res.status(404).send('Sorry, that page is not here!');
   res.sendFile(path.join(__dirname, '../client/index.html'));
 });

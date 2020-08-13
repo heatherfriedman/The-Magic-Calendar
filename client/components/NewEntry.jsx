@@ -5,10 +5,10 @@ class NewEntry extends React.Component {
     super(props);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = { type: '', entry: '' };
+    this.state = { type: [], entry: [] };
   }
   handleChange(event) {
-    this.setState({ ...this.state, [event.target.name]: event.target.value });
+    this.setState({ ...this.state, [event.target.name]: [event.target.value] });
   }
 
   async handleSubmit(event) {
@@ -34,7 +34,7 @@ class NewEntry extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="auth-header">
         <form onSubmit={this.handleSubmit}>
           <label>
             Select Type of Entry:
@@ -63,7 +63,7 @@ class NewEntry extends React.Component {
             type="text"
           ></input>
 
-          <input type="submit" value="Create Entry"></input>
+          <input className="buttons" type="submit" value="Create Entry"></input>
         </form>
       </div>
     );

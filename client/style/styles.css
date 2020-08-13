@@ -1,3 +1,90 @@
 body {
-  /* cursor: url('../images/wand.png'), auto; */
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  display: flex;
+  justify-content: center;
+}
+
+.buttons {
+  background: #3d94f6;
+  background-image: -webkit-linear-gradient(top, #3d94f6, #1e62d0);
+  background-image: -moz-linear-gradient(top, #3d94f6, #1e62d0);
+  background-image: -ms-linear-gradient(top, #3d94f6, #1e62d0);
+  background-image: -o-linear-gradient(top, #3d94f6, #1e62d0);
+  background-image: linear-gradient(to bottom, #3d94f6, #1e62d0);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-family: Open Sans;
+  font-size: 20px;
+  font-weight: 300;
+  padding: 5px;
+  box-shadow: 1px 1px 20px 0px #000000;
+  -webkit-box-shadow: 1px 1px 20px 0px #000000;
+  -moz-box-shadow: 1px 1px 20px 0px #000000;
+  text-shadow: 1px 1px 20px #000000;
+  border: solid #337fed 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.buttons:hover {
+  background: #c46ec1;
+  border: solid #ff00f3 1px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.smaller-button {
+  padding: 1px;
+  background: #f64c3d;
+}
+
+.header {
+  font-family: Open Sans;
+  font-size: 60px;
+  font-weight: 300;
+  color: #0762ca;
+}
+
+.auth-header {
+  font-family: Open Sans;
+  font-size: 30px;
+  font-weight: 300;
+  color: #0762ca;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.spacing-middle {
+  display: flex;
+  justify-content: space-around;
+}
+
+.spacing-left {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.spacing-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-text {
+  font-family: Open Sans;
+  color: #0762ca;
+  font-weight: 300;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
