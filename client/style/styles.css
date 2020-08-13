@@ -16,7 +16,7 @@ body {
   -moz-border-radius: 20px;
   border-radius: 20px;
   color: #ffffff;
-  font-family: Open Sans;
+
   font-size: 20px;
   font-weight: 300;
   padding: 5px;
@@ -49,30 +49,30 @@ body {
 }
 
 .header {
-  font-family: Open Sans;
   font-size: 60px;
   font-weight: 300;
   color: #0762ca;
+  font-family: 'Chilanka', cursive;
 }
 
 .auth-header {
-  font-family: Open Sans;
   font-size: 30px;
   font-weight: 300;
   color: #0762ca;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Sora', sans-serif;
 }
 
 .smallest-text {
-  font-family: Open Sans;
   font-size: 20px;
   font-weight: 300;
   color: #0762ca;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Sora', sans-serif;
 }
 
 .small-input {
@@ -96,11 +96,11 @@ body {
 }
 
 .main-text {
-  font-family: Open Sans;
   color: #0762ca;
   font-weight: 300;
   font-size: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: 'Sora', sans-serif;
 }

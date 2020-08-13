@@ -75,11 +75,9 @@ class Main extends React.Component {
       <div className="main-text">
         <div className="smallest-text">
           Welcome to The Magic Calendar. Each type of entry has a specific icon.
-          <br />
-          <FontAwesomeIcon icon={faTasks} /> are for TASKS,
-          <br />
-          <FontAwesomeIcon icon={faPen} /> are for NOTES, and <br />
-          <FontAwesomeIcon icon={faDotCircle} /> are for EVENTS
+          <FontAwesomeIcon icon={faTasks} /> 'tasks'
+          <FontAwesomeIcon icon={faPen} /> 'notes'
+          <FontAwesomeIcon icon={faDotCircle} /> 'events'
         </div>
         <Link to="/new">
           <button type="button" className="buttons">

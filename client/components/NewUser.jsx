@@ -28,6 +28,8 @@ class NewUser extends React.Component {
       if (response.status === 200) {
         //redirect to Main
         this.props.history.replace('/main');
+      } else {
+        alert('Please choose a different username. This user already exists.');
       }
     } catch (error) {
       console.log('Error in handleSubmit of NewUser:', error);
